@@ -1,4 +1,4 @@
-package se.thinkcode.stream;
+package lab.mf.stream;
 
 import java.io.InputStream;
 import java.io.OutputStream;

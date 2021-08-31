@@ -1,4 +1,4 @@
-package se.thinkcode;
+package lab.mf;
 
 @SuppressWarnings("WeakerAccess")
 public class CucumberExtension {
@@ -19,5 +19,13 @@ public class CucumberExtension {
 
     public String featurePath = "src/test/resources";
 
-    public String main = "cucumber.api.cli.Main";
+    public String main;
+
+    public CucumberExtension() {
+        this(true);
+    }
+
+    public CucumberExtension(boolean isCucumber) {
+        main = isCucumber ? "io.cucumber.core.cli.Main" : "com.intuit.karate.Main";
+    }
 }

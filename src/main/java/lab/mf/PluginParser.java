@@ -1,4 +1,4 @@
-package se.thinkcode;
+package lab.mf;
 
 class PluginParser {
     static String[] parse(String plugins) {

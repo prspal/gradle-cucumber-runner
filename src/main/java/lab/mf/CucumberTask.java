@@ -1,4 +1,4 @@
-package se.thinkcode;
+package lab.mf;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.logging.Logger;
@@ -7,11 +7,13 @@ import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.api.tasks.options.Option;
-import se.thinkcode.stream.StreamConsumer;
+import lab.mf.stream.StreamConsumer;
 
 import java.io.File;
 
 public class CucumberTask extends DefaultTask {
+
+    private final boolean isCucumber;
 
     @Option(option = "cucumber-help",
             description = "Get Cucumber help")
@@ -125,16 +127,21 @@ public class CucumberTask extends DefaultTask {
         this.featurePath = featurePath;
     }
 
-    public CucumberTask() {
-        setGroup("Cucumber");
+    public CucumberTask(boolean isCucumber) {
+        this.isCucumber = isCucumber;
+        setGroup(isCucumber? "Cucumber": "Karate");
         setDescription("Execute Cucumber-JVM from Gradle");
+    }
+
+    public CucumberTask() {
+        this(true);
     }
 
     @TaskAction
     public void runCucumber() {
         CucumberExtension extension = getProject().getExtensions().findByType(CucumberExtension.class);
         if (extension == null) {
-            extension = new CucumberExtension();
+            extension = new CucumberExtension(isCucumber);
         }
 
         try {

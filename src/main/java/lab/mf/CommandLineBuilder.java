@@ -1,4 +1,4 @@
-package se.thinkcode;
+package lab.mf;
 
 import java.io.File;
 import java.util.ArrayList;

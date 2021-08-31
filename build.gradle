@@ -10,8 +10,8 @@ repositories {
     mavenLocal()
 }
 
-version = "0.0.9"
-group = "se.thinkcode"
+version = "0.0.10"
+group = "lab.mf"
 
 dependencies {
     implementation gradleApi()
@@ -24,16 +24,16 @@ dependencies {
 gradlePlugin {
     plugins {
         cucumberRunnerPlugin {
-            id = 'se.thinkcode.cucumber-runner'
+            id = 'lab.mf.cucumber-runner'
             displayName = 'cucumber'
             description = 'A Cucumber-JVM runner'
-            implementationClass = 'se.thinkcode.CucumberRunner'
+            implementationClass = 'lab.mf.CucumberRunner'
         }
     }
 }
 
 pluginBundle {
-    website = 'https://github.com/tsundberg/gradle-cucumber-runner/blob/' + version + '/README.md'
-    vcsUrl = 'https://github.com/tsundberg/gradle-cucumber-runner'
+    website = 'https://github.com/prspal/gradle-cucumber-runner/blob/' + version + '/README.md'
+    vcsUrl = 'https://github.com/prspal/gradle-cucumber-runner'
     tags = ['cucumber', 'cucumber-jvm']
 }

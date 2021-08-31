@@ -1,4 +1,4 @@
-package se.thinkcode;
+package lab.mf;
 
 import org.junit.Test;
 
