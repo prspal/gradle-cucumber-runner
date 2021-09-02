@@ -10,7 +10,7 @@ repositories {
     mavenLocal()
 }
 
-version = "0.0.10"
+version = "0.0.1"
 group = "lab.mf"
 
 dependencies {
@@ -24,7 +24,7 @@ dependencies {
 gradlePlugin {
     plugins {
         cucumberRunnerPlugin {
-            id = 'lab.mf.cucumber-runner'
+            id = 'com.github.prspal.cucumber-runner'
             displayName = 'cucumber'
             description = 'A Cucumber-JVM runner'
             implementationClass = 'lab.mf.CucumberRunner'
@@ -33,7 +33,7 @@ gradlePlugin {
 }
 
 pluginBundle {
-    website = 'https://github.com/prspal/gradle-cucumber-runner/blob/' + version + '/README.md'
+    website = 'https://github.com/prspal/gradle-cucumber-runner/blob/master/README.md'
     vcsUrl = 'https://github.com/prspal/gradle-cucumber-runner'
     tags = ['cucumber', 'cucumber-jvm']
 }
